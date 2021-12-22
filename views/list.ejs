@@ -1,0 +1,32 @@
+<%- include ("header.ejs") -%>
+
+<div class="container">
+    <div class="box" id="header">
+        <h1> <%=today%>  </h1>
+        <p>Get things done, one item at a time.
+        </p>
+    </div>
+    <div class="box"></div>
+        <form action="/" method="post">
+            <input type="text" name="itemName" required autocomplete="off">
+            <button class="submit" type="submit">+</button>
+        </form>
+
+        <% for(i=0 ; i<todoList.length; i++){ %>
+            <div class="list-item">
+                <input type="checkbox" class="remove">
+                <p class="list"> <%= todoList[i] %>  </p>
+                
+            </div>
+        <%} %>
+    
+    </div>
+</div>
+
+
+
+
+<script src="../public/index.js"></script>
+
+<%- include ("footer.ejs") -%>
+    
